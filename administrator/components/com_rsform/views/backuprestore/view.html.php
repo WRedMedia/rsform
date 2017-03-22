@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-class RsformViewBackuprestore extends JViewLegacy
+class RSFormViewBackuprestore extends JViewLegacy
 {
 	public function display($tpl = null) {
 		$this->addToolbar();
@@ -36,7 +36,7 @@ class RsformViewBackuprestore extends JViewLegacy
 	
 	protected function addToolBar() {
 		// set title
-		JToolbarHelper::title('RSForm! Pro', 'rsform');
+		JToolBarHelper::title('RSForm! Pro', 'rsform');
 		
 		require_once JPATH_COMPONENT.'/helpers/toolbar.php';
 		RSFormProToolbarHelper::addToolbar('backuprestore');

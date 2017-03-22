@@ -62,13 +62,12 @@ class RSFormProFieldTicket extends RSFormProFieldHidden
 			$db    = JFactory::getDbo();
 			$query = $db->getQuery(true);
 
-			// Catch only numeric values, this scenario happens when the ticket type was previously 'Random Type'
 			$query
-				->select("MAX(CAST(".$db->qn('FieldValue')." AS SIGNED))")
+				->select("MAX(".$db->qn('FieldValue').")")
 				->from('#__rsform_submission_values')
 				->where($db->qn('FormId') . ' = ' . $db->q($this->formId))
 				->where($db->qn('FieldName') . ' = ' . $db->q($this->name))
-				->where($db->qn('FieldValue') . " REGEXP '^[0-9]+$'");
+				->where($db->qn('FieldValue') . " REGEXP '^[0-9]+$'"); // condition to catch only the numeric values, this scenario happens when the ticket type was previous Random Type
 			$db->setQuery($query);
 			$key = (int) $db->loadResult();
 			$key++;

@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-class RsformModelSubmissions extends JModelLegacy
+class RSFormModelSubmissions extends JModelLegacy
 {
 	var $_form = null;
 	var $_data = array();
@@ -25,7 +25,7 @@ class RsformModelSubmissions extends JModelLegacy
 		parent::__construct();
 		
 		$app 			= JFactory::getApplication();
-		$this->_db 		= JFactory::getDbo();
+		$this->_db 		= JFactory::getDBO();
 		$this->params 	= $app->getParams('com_rsform');
 		$this->formId 	= (int) $this->params->get('formId');
 		
@@ -335,7 +335,6 @@ class RsformModelSubmissions extends JModelLegacy
 					// PDF links
 					'{detailspdf}'			 => '<a href="'.$pdf_link.'">',
 					'{detailspdf_link}'		 => $pdf_link,
-					'{global:formid}'		 => $submission['FormId'],
 					// Payment Status
 					'{_STATUS:value}'		 => isset($submission['SubmissionValues']['_STATUS']) ? JText::_('RSFP_PAYPAL_STATUS_'.$submission['SubmissionValues']['_STATUS']['Value']) : ''
 				);
@@ -422,8 +421,7 @@ class RsformModelSubmissions extends JModelLegacy
 				'{global:confirmed}'	 => $submission->confirmed ? JText::_('RSFP_YES') : JText::_('RSFP_NO'),
 				// PDF
 				'{detailspdf}'			 => '<a href="'.$pdf_link.'">',
-				'{detailspdf_link}'		 => $pdf_link,
-				'{global:formid}'		 => $submission->FormId
+				'{detailspdf_link}'		 => $pdf_link
 			);
 			
 			$replace = array_merge($replace, $replace2, array_keys($replacements));

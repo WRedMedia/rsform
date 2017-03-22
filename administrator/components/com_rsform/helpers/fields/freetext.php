@@ -13,19 +13,8 @@ class RSFormProFieldFreeText extends RSFormProField
 {
 	// backend preview
 	public function getPreviewInput() {
-		$value		= $this->getProperty('TEXT', '');
-		$codeIcon 	= '';
-		
-		if ($this->hasCode($value)) {
-			$value 		= JText::_('RSFP_PHP_CODE_PLACEHOLDER');
-			$codeIcon	= RSFormProHelper::getIcon('php');
-		} else {
-			$value = '<pre>'.$this->escape($value).'</pre>';
-		}
-		
-		$html = '<td>&nbsp;</td>';
-		$html .= '<td>'.$codeIcon.$value.'</td>';
-		
+		$txt	 = $this->getProperty('TEXT', '');
+		$html = '<td>&nbsp;</td><td>'.$txt.'</td>';
 		return $html;
 	}
 	

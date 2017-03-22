@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-class RsformViewDirectory extends JViewLegacy
+class RSFormViewDirectory extends JViewLegacy
 {
 	public function display( $tpl = null ) {
 		$this->app			= JFactory::getApplication();

@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport( 'joomla.application.component.view');
 
-class RsformViewConditions extends JViewLegacy
+class RSFormViewConditions extends JViewLegacy
 {
 	function display($tpl = null)
 	{		

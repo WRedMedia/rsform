@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-class RsformViewUpdates extends JViewLegacy
+class RSFormViewUpdates extends JViewLegacy
 {
 	public function display($tpl = null) {
 		$this->addToolBar();
@@ -19,7 +19,7 @@ class RsformViewUpdates extends JViewLegacy
 	
 	protected function addToolbar() {
 		// set title
-		JToolbarHelper::title('RSForm! Pro', 'rsform');
+		JToolBarHelper::title('RSForm! Pro', 'rsform');
 		
 		require_once JPATH_COMPONENT.'/helpers/toolbar.php';
 		RSFormProToolbarHelper::addToolbar('updates');

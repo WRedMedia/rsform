@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-class RsformViewMappings extends JViewLegacy
+class RSFormViewMappings extends JViewLegacy
 {
 	public function display( $tpl = null )
 	{

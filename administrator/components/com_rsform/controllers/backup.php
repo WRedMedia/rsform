@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
 
 require_once JPATH_COMPONENT.'/helpers/backup/backup.php';
 
-class RsformControllerBackup extends RsformController
+class RSFormControllerBackup extends RSFormController
 {
 	public function start() {		
 		$input 		= JFactory::getApplication()->input;

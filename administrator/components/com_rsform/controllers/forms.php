@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.controller');
 
-class RsformControllerForms extends RsformController
+class RSFormControllerForms extends RSFormController
 {
 	public function __construct()
 	{
@@ -20,7 +20,7 @@ class RsformControllerForms extends RsformController
 		$this->registerTask('publish',   'changestatus');
 		$this->registerTask('unpublish', 'changestatus');
 		
-		$this->_db = JFactory::getDbo();
+		$this->_db = JFactory::getDBO();
 	}
 
 	public function manage()
@@ -70,7 +70,7 @@ class RsformControllerForms extends RsformController
 	
 	public function menuAddBackend()
 	{
-		$db		= JFactory::getDbo();
+		$db		= JFactory::getDBO();
 		$app	= JFactory::getApplication();
 		$formId	= JFactory::getApplication()->input->getInt('formId',0);
 		
@@ -97,7 +97,7 @@ class RsformControllerForms extends RsformController
 	 */
 	public function menuRemoveBackend()
 	{
-		$db		= JFactory::getDbo();
+		$db		= JFactory::getDBO();
 		$app	= JFactory::getApplication();
 		$formId	= JFactory::getApplication()->input->getInt('formId',0);
 		
@@ -458,7 +458,7 @@ class RsformControllerForms extends RsformController
 	public function changeStatus()
 	{
 		$task = $this->getTask();
-		$db   = JFactory::getDbo();
+		$db   = JFactory::getDBO();
 		
 		// Get the selected items
 		$cid = JRequest::getVar('cid', array(0), 'post', 'array');
@@ -690,7 +690,7 @@ class RsformControllerForms extends RsformController
 	}
 	
 	public function calculations() {
-		$db 		= JFactory::getDbo();
+		$db 		= JFactory::getDBO();
 		$formId 	= JFactory::getApplication()->input->getInt('formId');
 		$total		= JRequest::getVar('total');
 		$expression	= JRequest::getVar('expression');
@@ -706,7 +706,7 @@ class RsformControllerForms extends RsformController
 	}
 	
 	public function removeCalculation() {
-		$db 		= JFactory::getDbo();
+		$db 		= JFactory::getDBO();
 		$id		 	= JFactory::getApplication()->input->getInt('id');
 		
 		$db->setQuery("DELETE FROM #__rsform_calculations WHERE `id` = ".$id."");
@@ -718,7 +718,7 @@ class RsformControllerForms extends RsformController
 	}
 	
 	public function saveCalculationsOrdering() {
-		$db		= JFactory::getDbo();
+		$db		= JFactory::getDBO();
 		$cids	= JFactory::getApplication()->input->get('cid',array(),'array');
 		$formId	= JFactory::getApplication()->input->getInt('formId',0);
 		

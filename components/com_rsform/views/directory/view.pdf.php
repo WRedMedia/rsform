@@ -8,7 +8,7 @@
 defined('_JEXEC') or die('Restricted access');
 jimport( 'joomla.application.component.view');
 
-class RsformViewDirectory extends JViewLegacy
+class RSFormViewDirectory extends JViewLegacy
 {
 	public function display( $tpl = null ) {
 		$this->app 			= JFactory::getApplication();
@@ -35,14 +35,7 @@ class RsformViewDirectory extends JViewLegacy
 			$contents = ob_get_contents();
 			
 			// Build root without Joomla! folder
-			if ($folder = JUri::root(true))
-			{
-				$site_path = substr(str_replace(DIRECTORY_SEPARATOR, '/', JPATH_SITE), 0, -strlen($folder));
-			}
-			else
-			{
-				$site_path = str_replace(DIRECTORY_SEPARATOR, '/', JPATH_SITE);
-			}
+			$site_path = substr(str_replace(DIRECTORY_SEPARATOR, '/', JPATH_SITE), 0, -strlen(JUri::root(true)));
 			
 			// Add own CSS
 			$css_path = realpath($site_path.'/'.JHtml::stylesheet('com_rsform/directory.css', array(), true, true));

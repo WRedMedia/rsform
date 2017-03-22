@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-class RsformControllerMappings extends RsformController
+class RSFormControllerMappings extends RSFormController
 {
 	public function getTables() {
 		$model		= $this->getModel('mappings');

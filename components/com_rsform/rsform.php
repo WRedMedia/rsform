@@ -30,13 +30,13 @@ if ($controller == 'functions' || $controller == 'adapter') {
 if (!empty($controller) && file_exists(JPATH_COMPONENT.'/controllers/'.$controller.'.php'))
 {
 	require_once(JPATH_COMPONENT.'/controllers/'.$controller.'.php');
-	$controller = 'RsformController'.$controller;
-	$RsformController = new $controller();
+	$controller = 'RSFormController'.$controller;
+	$RSFormController = new $controller();
 }
 else
-	$RsformController = new RsformController();
+	$RSFormController = new RSFormController();
 
-$RsformController->execute($app->input->getWord('task'));
+$RSFormController->execute($app->input->getWord('task'));
 
 // Redirect if set
-$RsformController->redirect();
+$RSFormController->redirect();

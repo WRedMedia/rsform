@@ -21,10 +21,10 @@ class RSFormProMappings
 
 			if (RSFormProHelper::isJ('3.0')) {
 				JModelLegacy::addIncludePath(JPATH_ADMINISTRATOR.'/components/com_rsform/models');
-				$model = JModelLegacy::getInstance('mappings', 'RsformModel');
+				$model = JModelLegacy::getInstance('mappings', 'RSFormModel');
 			} else {
 				JModel::addIncludePath(JPATH_ADMINISTRATOR.'/components/com_rsform/models');
-				$model = JModel::getInstance('mappings', 'RsformModel');
+				$model = JModel::getInstance('mappings', 'RSFormModel');
 			}
 		}
 		
@@ -152,10 +152,10 @@ class RSFormProMappings
 
 		if (RSFormProHelper::isJ('3.0')) {
 			JModelLegacy::addIncludePath(JPATH_ADMINISTRATOR.'/components/com_rsform/models');
-			$model = JModelLegacy::getInstance('mappings', 'RsformModel');
+			$model = JModelLegacy::getInstance('mappings', 'RSFormModel');
 		} else {
 			JModel::addIncludePath(JPATH_ADMINISTRATOR.'/components/com_rsform/models');
-			$model = JModel::getInstance('mappings', 'RsformModel');
+			$model = JModel::getInstance('mappings', 'RSFormModel');
 		}
 		
 		$columns = $model->getColumns($config);

@@ -10,15 +10,15 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.view');
 jimport('joomla.html.pane');
 
-class RsformViewConfiguration extends JViewLegacy
+class RSFormViewConfiguration extends JViewLegacy
 {
 	function display($tpl = null)
 	{
 		$this->addToolbar();
 		
-		JToolbarHelper::apply('configuration.apply');
-		JToolbarHelper::save('configuration.save');
-		JToolbarHelper::cancel('configuration.cancel');
+		JToolBarHelper::apply('configuration.apply');
+		JToolBarHelper::save('configuration.save');
+		JToolBarHelper::cancel('configuration.cancel');
 		
 		// tabs
 		$this->tabs		 = $this->get('RSTabs');
@@ -41,7 +41,7 @@ class RsformViewConfiguration extends JViewLegacy
 	
 	protected function addToolbar() {
 		// set title
-		JToolbarHelper::title('RSForm! Pro', 'rsform');
+		JToolBarHelper::title('RSForm! Pro', 'rsform');
 		
 		require_once JPATH_COMPONENT.'/helpers/toolbar.php';
 		RSFormProToolbarHelper::addToolbar('configuration');

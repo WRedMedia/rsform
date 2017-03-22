@@ -141,13 +141,8 @@ function resetForm()
 					<?php if (isset($submission['SubmissionValues'][$header]['Value'])) { ?>
 						<?php if (in_array($header, $this->unescapedFields)) { ?>
 							<?php echo $submission['SubmissionValues'][$header]['Value']; ?>
-						<?php } else { 
-							$escapedValue = $this->escape($submission['SubmissionValues'][$header]['Value']);
-							if($this->form->TextareaNewLines && isset($this->specialFields['textareaFields']) && !empty($this->specialFields['textareaFields']) && in_array($header, $this->specialFields['textareaFields'])) { 
-								$escapedValue = nl2br($escapedValue);
-							}
-							echo $escapedValue;
-						?>
+						<?php } else { ?>
+							<?php echo $this->escape($submission['SubmissionValues'][$header]['Value']); ?>
 						<?php } ?>
 					<?php } else { ?>
 					&nbsp;

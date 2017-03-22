@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.model');
 
-class RsformModelRsform extends JModelLegacy
+class RSFormModelRSForm extends JModelLegacy
 {
 	var $params;
 	

@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-class RsformController extends JControllerLegacy
+class RSFormController extends JControllerLegacy
 {	
 	public function captcha() {
 		require_once JPATH_SITE.'/components/com_rsform/helpers/captcha.php';

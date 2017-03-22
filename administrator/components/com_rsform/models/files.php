@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-class RsformModelFiles extends JModelLegacy
+class RSFormModelFiles extends JModelLegacy
 {
 	protected $_folder = null;
 	

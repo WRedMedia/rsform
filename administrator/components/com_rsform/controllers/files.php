@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.controller');
 
-class RsformControllerFiles extends RsformController
+class RSFormControllerFiles extends RSFormController
 {
 	public function display($cachable = false, $urlparams = false) {
 		JFactory::getApplication()->input->set('view', 'files');

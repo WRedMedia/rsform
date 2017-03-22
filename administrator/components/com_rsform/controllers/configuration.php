@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.controller');
 
-class RsformControllerConfiguration extends RsformController
+class RSFormControllerConfiguration extends RSFormController
 {
 	function __construct()
 	{
@@ -17,7 +17,7 @@ class RsformControllerConfiguration extends RsformController
 		
 		$this->registerTask('apply', 'save');
 		
-		$this->_db = JFactory::getDbo();
+		$this->_db = JFactory::getDBO();
 	}
 
 	function edit()

@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.view');
 
-class RsformViewRsform extends JViewLegacy
+class RSFormViewRsform extends JViewLegacy
 {
 	protected $buttons;
 	// version info
@@ -36,10 +36,10 @@ class RsformViewRsform extends JViewLegacy
 	
 	protected function addToolbar() {
 		if (JFactory::getUser()->authorise('core.admin', 'com_rsform'))
-			JToolbarHelper::preferences('com_rsform');
+			JToolBarHelper::preferences('com_rsform');
 		
 		// set title
-		JToolbarHelper::title('RSForm! Pro', 'rsform');
+		JToolBarHelper::title('RSForm! Pro', 'rsform');
 		
 		require_once JPATH_COMPONENT.'/helpers/toolbar.php';
 		RSFormProToolbarHelper::addToolbar('rsform');

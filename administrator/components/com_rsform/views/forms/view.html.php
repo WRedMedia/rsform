@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-class RsformViewForms extends JViewLegacy
+class RSFormViewForms extends JViewLegacy
 {
 	public function display($tpl = null)
 	{
@@ -16,7 +16,7 @@ class RsformViewForms extends JViewLegacy
 
 		RSFormProHelper::loadCodeMirror();
 
-		JToolbarHelper::title('RSForm! Pro','rsform');
+		JToolBarHelper::title('RSForm! Pro','rsform');
 
 		// adding the toolbar on 2.5
 		if (!RSFormProHelper::isJ('3.0')) {
@@ -47,19 +47,19 @@ class RsformViewForms extends JViewLegacy
 			$previewIcon	 = RSFormProHelper::isJ('3.0') ? 'new tab' : 'preview';
 			$directoryIcon	 = RSFormProHelper::isJ('3.0') ? 'folder' : 'forward';
 
-			JToolbarHelper::apply('forms.apply');
-			JToolbarHelper::save('forms.save');
-			JToolbarHelper::spacer();
-			JToolbarHelper::custom('forms.preview', $previewIcon, $previewIcon, JText::_('JGLOBAL_PREVIEW'), false);
-			JToolbarHelper::custom('submissions.back', $submissionsIcon, $submissionsIcon, JText::_('RSFP_SUBMISSIONS'), false);
-			JToolbarHelper::custom('forms.directory', $directoryIcon, $directoryIcon, JText::_('RSFP_DIRECTORY'), false);
-			JToolbarHelper::custom('components.copy', 'copy', 'copy', JText::_('RSFP_COPY_TO_FORM'), false);
-			JToolbarHelper::custom('components.duplicate', 'copy', 'copy', JText::_('RSFP_DUPLICATE'), false);
-			JToolbarHelper::deleteList(JText::_('RSFP_ARE_YOU_SURE_DELETE'), 'components.remove', JText::_('JTOOLBAR_DELETE'));
-			JToolbarHelper::publishList('components.publish', JText::_('JTOOLBAR_PUBLISH'));
-			JToolbarHelper::unpublishList('components.unpublish', JText::_('JTOOLBAR_UNPUBLISH'));
-			JToolbarHelper::spacer();
-			JToolbarHelper::cancel('forms.cancel');
+			JToolBarHelper::apply('forms.apply');
+			JToolBarHelper::save('forms.save');
+			JToolBarHelper::spacer();
+			JToolBarHelper::custom('forms.preview', $previewIcon, $previewIcon, JText::_('JGLOBAL_PREVIEW'), false);
+			JToolBarHelper::custom('submissions.back', $submissionsIcon, $submissionsIcon, JText::_('RSFP_SUBMISSIONS'), false);
+			JToolBarHelper::custom('forms.directory', $directoryIcon, $directoryIcon, JText::_('RSFP_DIRECTORY'), false);
+			JToolBarHelper::custom('components.copy', 'copy', 'copy', JText::_('RSFP_COPY_TO_FORM'), false);
+			JToolBarHelper::custom('components.duplicate', 'copy', 'copy', JText::_('RSFP_DUPLICATE'), false);
+			JToolBarHelper::deleteList(JText::_('RSFP_ARE_YOU_SURE_DELETE'), 'components.remove', JText::_('JTOOLBAR_DELETE'));
+			JToolBarHelper::publishList('components.publish', JText::_('JTOOLBAR_PUBLISH'));
+			JToolBarHelper::unpublishList('components.unpublish', JText::_('JTOOLBAR_UNPUBLISH'));
+			JToolBarHelper::spacer();
+			JToolBarHelper::cancel('forms.cancel');
 
 			$this->tabposition = JFactory::getApplication()->input->getInt('tabposition', 0);
 			$this->tab 		   = JFactory::getApplication()->input->getInt('tab', 0);
@@ -68,7 +68,7 @@ class RsformViewForms extends JViewLegacy
 
 			$this->hasSubmitButton = $this->get('hasSubmitButton');
 
-			JToolbarHelper::title('RSForm! Pro <small>['.JText::sprintf('RSFP_EDITING_FORM', $this->form->FormTitle).']</small>','rsform');
+			JToolBarHelper::title('RSForm! Pro <small>['.JText::sprintf('RSFP_EDITING_FORM', $this->form->FormTitle).']</small>','rsform');
 
 			$lists['Published'] = $this->renderHTML('select.booleanlist','Published','',$this->form->Published);
 			$lists['DisableSubmitButton'] = $this->renderHTML('select.booleanlist','DisableSubmitButton','',$this->form->DisableSubmitButton);
@@ -141,15 +141,15 @@ class RsformViewForms extends JViewLegacy
 		{
 			$nextIcon = RSFormProHelper::isJ('3.0') ? 'next' : 'forward';
 
-			JToolbarHelper::custom('forms.new.steptwo', $nextIcon, $nextIcon, JText::_('JNEXT'), false);
-			JToolbarHelper::cancel('forms.cancel');
+			JToolBarHelper::custom('forms.new.steptwo', $nextIcon, $nextIcon, JText::_('JNEXT'), false);
+			JToolBarHelper::cancel('forms.cancel');
 		}
 		elseif ($layout == 'new2')
 		{
 			$nextIcon = RSFormProHelper::isJ('3.0') ? 'next' : 'forward';
 
-			JToolbarHelper::custom('forms.new.stepthree', $nextIcon, $nextIcon, JText::_('JNEXT'), false);
-			JToolbarHelper::cancel('forms.cancel');
+			JToolBarHelper::custom('forms.new.stepthree', $nextIcon, $nextIcon, JText::_('JNEXT'), false);
+			JToolBarHelper::cancel('forms.cancel');
 
 			$lists['AdminEmail'] 			= $this->renderHTML('select.booleanlist', 'AdminEmail', 'onclick="changeAdminEmail(this.value)"', 1);
 			$lists['UserEmail'] 			= $this->renderHTML('select.booleanlist', 'UserEmail', '', 1);
@@ -170,16 +170,16 @@ class RsformViewForms extends JViewLegacy
 		{
 			$nextIcon = RSFormProHelper::isJ('3.0') ? 'next' : 'forward';
 
-			JToolbarHelper::custom('forms.new.stepfinal', $nextIcon, $nextIcon, JText::_('RSFP_FINISH'), false);
-			JToolbarHelper::cancel('forms.cancel');
+			JToolBarHelper::custom('forms.new.stepfinal', $nextIcon, $nextIcon, JText::_('RSFP_FINISH'), false);
+			JToolBarHelper::cancel('forms.cancel');
 
 			$lists['predefinedForms'] = JHTML::_('select.genericlist', $this->get('predefinedforms'), 'predefinedForm', '');
 			$this->lists = $lists;
 		}
 		elseif ($layout == 'component_copy')
 		{
-			JToolbarHelper::custom('components.copy.process', 'copy', 'copy', JText::_('RSFP_COPY'), false);
-			JToolbarHelper::cancel('components.copy.cancel');
+			JToolBarHelper::custom('components.copy.process', 'copy', 'copy', JText::_('RSFP_COPY'), false);
+			JToolBarHelper::cancel('components.copy.cancel');
 
 			$formlist = $this->get('formlist');
 			$lists['forms'] = JHTML::_('select.genericlist', $formlist, 'toFormId', '', 'value', 'text');
@@ -217,13 +217,13 @@ class RsformViewForms extends JViewLegacy
 		}
 		elseif ($layout == 'show')
 		{
-			$db = JFactory::getDbo();
+			$db = JFactory::getDBO();
 			$lang = JFactory::getLanguage();
 			$lang->load('com_rsform', JPATH_SITE);
 			$formId = JFactory::getApplication()->input->getInt('formId');
 
 			$db->setQuery("SELECT FormTitle FROM #__rsform_forms WHERE FormId = ".$formId." ");
-			JToolbarHelper::title($db->loadResult(),'rsform');
+			JToolBarHelper::title($db->loadResult(),'rsform');
 
 			$this->formId = $formId;
 		}
@@ -253,13 +253,13 @@ class RsformViewForms extends JViewLegacy
 			$this->sidebar = $this->get('Sidebar');
 
 			JToolbarHelper::addNew('forms.add', JText::_('JTOOLBAR_NEW'));
-			JToolbarHelper::spacer();
-			JToolbarHelper::custom('forms.copy', 'copy.png', 'copy_f2.png', JText::_('RSFP_DUPLICATE'), false);
-			JToolbarHelper::spacer();
-			JToolbarHelper::deleteList(JText::_('RSFP_ARE_YOU_SURE_DELETE'), 'forms.delete', JText::_('JTOOLBAR_DELETE'));
-			JToolbarHelper::spacer();
-			JToolbarHelper::publishList('forms.publish', JText::_('JTOOLBAR_PUBLISH'));
-			JToolbarHelper::unpublishList('forms.unpublish', JText::_('JTOOLBAR_UNPUBLISH'));
+			JToolBarHelper::spacer();
+			JToolBarHelper::custom('forms.copy', 'copy.png', 'copy_f2.png', JText::_('RSFP_DUPLICATE'), false);
+			JToolBarHelper::spacer();
+			JToolBarHelper::deleteList(JText::_('RSFP_ARE_YOU_SURE_DELETE'), 'forms.delete', JText::_('JTOOLBAR_DELETE'));
+			JToolBarHelper::spacer();
+			JToolBarHelper::publishList('forms.publish', JText::_('JTOOLBAR_PUBLISH'));
+			JToolBarHelper::unpublishList('forms.unpublish', JText::_('JTOOLBAR_UNPUBLISH'));
 
 			$this->forms 	  = $this->get('forms');
 			$this->pagination = $this->get('Pagination');
@@ -325,7 +325,7 @@ class RsformViewForms extends JViewLegacy
 		// this is a workaround so if called multiple times it will not duplicate the buttons
 		if (!$called) {
 			// set title
-			JToolbarHelper::title('RSForm! Pro', 'rsform');
+			JToolBarHelper::title('RSForm! Pro', 'rsform');
 
 			require_once JPATH_COMPONENT.'/helpers/toolbar.php';
 			RSFormProToolbarHelper::addToolbar('forms');
